@@ -1,0 +1,23 @@
+
+
+<body>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-sm-8">
+            <h1>My github repositories</h1>
+            <ol>
+            {% for repo in github_repos %}
+                <li>{{ repo.name }}</li>
+            {% endfor %}
+            </ol>
+        </div>
+      </div>
+
+    </div>
+</body>
+</html>
+
+
+
+

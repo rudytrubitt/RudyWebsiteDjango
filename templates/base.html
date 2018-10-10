@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <head>
-
-
-  </head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Boogaloo|Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="static/rudy-style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Boogaloo|Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="static/rudy-style.css" rel="stylesheet">
+</head>
 
   <body>
 
-    <!-- Navigation -->
-
-  
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="index">Rudy Trubitt</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="index">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="github">GitHub</a>
+          <a class="nav-item nav-link" href="contact">Contact</a>
+        </div>
+      </div>
+    </nav>
  
-   {{content}}
-
+    {{ content|safe }}
 
 
 
@@ -26,8 +41,8 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="static/jquery/jquery.min.js"></script>
+    <script src="static/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   </body>
 

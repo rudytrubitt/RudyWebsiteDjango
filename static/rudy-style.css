@@ -1,0 +1,22 @@
+/*!
+ */
+
+h1 {font-family: Boogaloo;}
+h2 {font-family: Boogaloo;}
+h3 {font-family: Boogaloo; }
+h4 {font-family: Boogaloo; }
+p {font-family: 'Open Sans', sans-serif; }
+nav {font-family: 'Open Sans', sans-serif; }
+div.display-4 {font-family: Boogaloo;}
+.box_me {
+        background-color: cornsilk;
+        padding: 10px
+        }
+.bigger {font-family: Boogaloo;
+        font-size: 18pt;
+        }
+
+/* this is an override of just the bg color of the breadcrumb style */
+.breadcrumb {
+            background-color: cornsilk; 
+}

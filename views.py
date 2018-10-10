@@ -4,36 +4,38 @@ from django.shortcuts import render
 
 
 def index(request):
+    content_html_file = open("content/index.html","r")
+    content_html = content_html_file.read()
     context = {
+        'title': 'Rudy Trubitt • Home',
+        'content': content_html,
     }
-    return render(request, 'index.html', context)
+    return render(request, 'base.html', context)
 
-def tech_writer(request):
-    # Django comes with a "shortcut" function called "render", that
-    # lets us read in HTML template files in separate directories to
-    # keep our code better organized.
-    context = {
-        'name': 'Ash Ketchum',
-        'pokemon': 'Pikachu',
-    }
-    return render(request, 'tech_writer.html', context)
+
 
 def contact(request):
-    # Django comes with a "shortcut" function called "render", that
-    # lets us read in HTML template files in separate directories to
-    # keep our code better organized.
+    print('render contact page')
+    content_html_file = open("content/contact.html","r")
+    content_html = content_html_file.read()
+    print(content_html)
     context = {
-
+        'title': 'Contact',
+        'content': content_html,
     }
-    return render(request, 'contact.html', context)
+    return render(request, 'base.html', context)
 
 
 def github(request):
     # We can also combine Django with APIs
+    content_html_file = open("content/github.html","r")
+    content_html = content_html_file.read()    
     response = requests.get('https://api.github.com/users/rudytrubitt/repos')
     repos = response.json()
     context = {
+        'title': 'Github Projects',
         'github_repos': repos,
+        'content': content_html,
     }
-    return render(request, 'github.html', context)
+    return render(request, 'base.html', context)
 
