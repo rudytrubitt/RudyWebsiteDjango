@@ -28,14 +28,14 @@ def contact(request):
 
 def github(request):
     # We can also combine Django with APIs
-    content_html_file = open("content/github.html","r")
-    content_html = content_html_file.read()    
+    #content_html_file = open("content/github.html","r")
+    #content_html = content_html_file.read()    
     response = requests.get('https://api.github.com/users/rudytrubitt/repos')
     repos = response.json()
     context = {
         'title': 'Github Projects',
         'github_repos': repos,
-        'content': content_html,
+    
     }
-    return render(request, 'base.html', context)
+    return render(request, 'github_repo_list.html', context)
 
