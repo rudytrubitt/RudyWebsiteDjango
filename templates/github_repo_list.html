@@ -9,7 +9,7 @@
             <h1>My github repositories</h1>
             <ol>
             {% for repo in github_repos %}
-                <li>{{ repo.name }}</li>
+              <li><a href= {{my_github_url_path}} {{ repo.name }}>{{ repo.name }}</a></li>
             {% endfor %}
             </ol>
         </div>
