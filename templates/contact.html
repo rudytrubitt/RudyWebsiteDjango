@@ -12,8 +12,25 @@
 
         <div class="col-8">
           <p>Rudy lives in the San Francisco Bay Area.</p>
-          <p>Phone:510.604.9582 • email: rudy@trubitt.com</p>
-            
+          <p>UNDER CONSTRUCTION-Send me an email using the form below:</p>
+        
+        
+          <form action="/send-email" method="POST">
+            <div class="col-8">
+              <div>Your name</div>
+              <input name="name" placeholder="Name" />
+            </div>
+            <div class="col-8">
+              <div>Your email</div>
+              <input name="email" type="email" placeholder="Email" />
+            </div>
+            <div class="col-8">
+              <div>Type message here:</div>
+              <textarea name="message">
+              </textarea>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
 
         </div>
         <hr>

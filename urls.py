@@ -8,6 +8,7 @@ urlpatterns = [
     path('index', views.index),
     path('contact', views.contact),
     path('github', views.github),
+    path('send-email', views.send_email),
 ]
 
 # Boilerplate to include static files

@@ -1,7 +1,8 @@
 import requests
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
+import os
 
 def index(request):
     # content_html_file = open("content/index.html","r")
@@ -36,3 +37,33 @@ def github(request):
     }
     return render(request, 'github_repo_list.html', context)
 
+
+mailgun_api_key = os.environ["MAILGUN_API_KEY"]
+
+def send_email(request):
+  name = request.POST["name"]
+  email = request.POST["email"]
+  message = request.POST["message"]
+  print('in the send_mail function',name,email,message)
+  return redirect('/')
+# Do something with these three variables... return redirect("/") # Return a redirect!
+
+# def send_email(request):
+#     return requests.post(
+#         "https://api.mailgun.net/v3/sandbox707f318e9d3449bda7397c824329e068.mailgun.org/messages",
+#         auth=("api", mailgun_api_key),
+#         data={"from": "Excited User <mailgun@sandbox707f318e9d3449bda7397c824329e068.mailgun.org>",
+#               "to": ["rudy@trubitt.com"],
+#               "subject": "Contact form email",
+#               "text": message})
+
+
+''' reference - this curl command works
+curl -s --user 'api:XXXXXXXXXXXXXXXXX' \
+    https://api.mailgun.net/v3/sandbox707f318e9d3449bda7397c824329e068.mailgun.org/messages \
+    -F from='Excited User <mailgun@sandbox707f318e9d3449bda7397c824329e068.mailgun.org>' \
+    -F to=rudy@trubitt.com \
+    -F subject='Hello' \
+    -F text='Testing some Mailgun awesomeness!'  
+
+    '''
